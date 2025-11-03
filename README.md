@@ -11,21 +11,21 @@
 This project develops a hybrid deep learning and rule-based system for classifying and tracking Arctic coastal ice using Sentinel-2 imagery (10 m RGB).  
 It combines a U-Net convolutional neural network (CNN) trained with RGB plus distance-to-coast (meters) inputs, followed by post-processing and brightness-based classification to refine the detection of landfast ice, drift ice, and open water.  
 
-The workflow enables temporal tracking of landfast-ice edge positioning and open-water fraction within coastal buffers (3 km, 5 km, 10 km) across key Arctic sites — **Wainwright**, **Utqiaġvik (Barrow)**, **Arviat**, and **Uelen** — between 2019 and 2024.
+The workflow enables temporal tracking of landfast-ice edge positioning and open-water fraction within coastal buffers (3 km, 5 km, 10 km) across key Arctic sites — **Wainwright**, **Utqiaġvik (Barrow)**, **Arviat**, and **Uelen** — between 2019 and 2024 during the spring months of March - June. 
 
 ---
 
 ## Motivation
 
 Machine learning models often struggle to distinguish landfast ice from drift ice, since their spectral reflectance is nearly identical in visible and near-infrared bands.  
-This similarity poses challenges for Arctic coastal monitoring, where small-scale ice-edge changes have profound implications for subsistence travel, ecosystem dynamics, and bowhead whale hunting access.  
+This similarity poses challenges for Arctic coastal monitoring, where small-scale changes in landfast ice and open water conditions can have strong implications for subsistence travel, ecosystem dynamics, and bowhead whale / marine hunting access.  
 
 To overcome this limitation, this project integrates:
 - A U-Net model to capture spatial texture and context.
 - A distance-to-coast feature to supply geophysical grounding.
 - A binary-tree thresholding step to refine open-water detection.  
 
-Together, these components form a robust, multi-site system for quantifying ice stability and nearshore open-water variability under climate change.
+Together, these components form a multi-site system for quantifying ice edge positioning and nearshore open-water variability during recent years. 
 
 ---
 
@@ -40,7 +40,7 @@ Together, these components form a robust, multi-site system for quantifying ice 
 ## Datasets
 
 - Sentinel-2 L2A RGB (10 m) – February–May, 2019–2024  
-- Training polygons (GeoJSON / GPKG) – 4 classes (open water, landfast, drift, transition)  
+- Training polygons (GeoJSON / GPKG) – 4 classes (open water, landfast, drift, transition) for 75 image pairs
 - Coastline shapefiles – U.S. and Canada landmasses  
 - Derived:  
   - Land masks (binary rasters)  
@@ -167,7 +167,6 @@ Goal: Quantify open-water fraction near the coast and ice edge.
 
 ## Expected Outcomes
 
-- Validated hybrid system (U-Net + Binary Tree) for Arctic ice detection.  
+- Validated hybrid system (U-Net + Binary Tree) for landfast ice detection.  
 - High-resolution time series of ice-edge movement and open-water fraction (2019–2024).  
 - Quantitative metrics on coastal ice stability and polynya persistence.  
-- Scalable framework for future pan-Arctic monitoring.
