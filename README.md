@@ -17,8 +17,7 @@ The workflow enables temporal tracking of landfast-ice edge positioning and open
 
 ## Motivation
 
-Machine learning models often struggle to distinguish landfast ice from drift ice, since their spectral reflectance is nearly identical in visible and near-infrared bands.  
-This similarity poses challenges for Arctic coastal monitoring, where small-scale changes in landfast ice and open water conditions can have strong implications for subsistence travel, ecosystem dynamics, and bowhead whale / marine hunting access.  
+Distinguishing landfast ice from drift ice purely by satellite optical reflectance is challenging: both may exhibit similar visible/NIR signatures (especially when snow‑covered or ponded), and classification often requires incorporating geospatial context (e.g., adjacency to coastline, motion‑derived anchoring) and ancillary features (e.g., distance to coast, connectivity). This similarity poses challenges for Arctic coastal monitoring, where small-scale changes in landfast ice and open water conditions can have strong implications for subsistence travel, ecosystem dynamics, and bowhead whale / marine hunting access.  
 
 Recent work (Iqrah et al., 2024) has shown the effectiveness of U‑Net on Sentinel‑2 for ice/open‐water classification, which supports our use of a similar architecture and input design. Studies such as Buckley et al. (2023) illustrate the potential of Sentinel‑2 to track melting pond and open‐water evolution in Arctic ice regimes. However, limitations exist in the detection of landfast ice in Arctic coastal icy scenes. 
 
