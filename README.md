@@ -20,7 +20,9 @@ The workflow enables temporal tracking of landfast-ice edge positioning and open
 Machine learning models often struggle to distinguish landfast ice from drift ice, since their spectral reflectance is nearly identical in visible and near-infrared bands.  
 This similarity poses challenges for Arctic coastal monitoring, where small-scale changes in landfast ice and open water conditions can have strong implications for subsistence travel, ecosystem dynamics, and bowhead whale / marine hunting access.  
 
-To overcome this limitation, this project integrates:
+Recent work (Iqrah et al., 2024) has shown the effectiveness of U‑Net on Sentinel‑2 for ice/open‐water classification, which supports our use of a similar architecture and input design. Studies such as Buckley et al. (2023) illustrate the potential of Sentinel‑2 to track melting pond and open‐water evolution in Arctic ice regimes. However, limitations exist in the detection of landfast ice in Arctic coastal icy scenes. 
+
+To overcome limitation, this project integrates:
 - A U-Net model to capture spatial texture and context.
 - A distance-to-coast feature to supply geophysical grounding.
 - A binary-tree thresholding step to refine open-water detection.  
@@ -169,4 +171,31 @@ Goal: Quantify open-water fraction near the coast and ice edge.
 
 - Validated hybrid system (U-Net + Binary Tree) for landfast ice detection.  
 - High-resolution time series of ice-edge movement and open-water fraction (2019–2024).  
-- Quantitative metrics on coastal ice stability and polynya persistence.  
+- Quantitative metrics on coastal ice stability and polynya persistence.
+
+  ---
+## References 
+
+Buckley, E. M., Farrell, S. L., Herzfeld, U. C., Webster, M. A., Trantow, T., Baney, O. N., Duncan, K. A. (2023). Observing the evolution of summer melt on multiyear sea ice with ICESat‑2 and Sentinel‑2. The Cryosphere, 17, 3695–3719. 
+tc.copernicus.org
+
+Iqrah, J. M., Koo, Y., Wang, W., Xie, H., Prasad, S. (2024). A Parallel Workflow for Polar Sea‑Ice Classification using Auto‑labeling of Sentinel‑2 Imagery. arXiv preprint. 
+arXiv
+
+Sivaraj, K., Solander, K., Abolt, C., Hunke, E. (2024). Improved Arctic Melt Pond Fraction Estimation Using Sentinel‑2 Imagery. EGUsphere. 
+egusphere.copernicus.org
+
+Chen, X., … (2025). A High‑Resolution Sea Ice Concentration Retrieval from Ice‑WaterNet: integrating U‑Net for Sentinel‑1/Sentinel‑2 imagery. Remote Sensing, 17(20), 3475. 
+MDPI
+
+König, M., et al. (2019). Application of Sentinel‑2 MSI in Arctic Research: Evaluating the Performance of Atmospheric Correction Approaches over Arctic Sea Ice. Frontiers in Earth Science. 
+Frontiers
+
+MaCVi, Chen, … (2023). Sea ice classification with dual‑polarized SAR imagery – a hierarchical deep‑learning pipeline. WACV2023 Workshop. 
+CVF Open Access
+
+S­hapiro, L., Eicken, H., Mahoney, A. R. (2023). Melt pond detection on landfast sea ice using dual‑co‑polarized scatterometer and Sentinel‑2 data. ScienceDirect. 
+sciencedirect.com
+
+Gens, R., et al. (2024). Advancing Arctic sea ice remote sensing with AI and deep learning: now and next. EGUsphere. 
+egusphere.copernicus.org
