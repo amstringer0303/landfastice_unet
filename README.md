@@ -172,7 +172,8 @@ Goal: Quantify open-water fraction near the coast and ice edge.
 - High-resolution time series of ice-edge movement and open-water fraction (2019–2024).  
 - Quantitative metrics on coastal ice stability and polynya persistence.
 
-  ![Combined classifications for Wainwright, AK (Sentinel-2, April 23 2023)](Sentinel_2_Wainwright_AK_20230423_combined_full_panel.png)
+![Wainwright classifications](Sentinel_2_Wainwright_AK_20230423_combined_full_panel.png)
+
 
   ---
 ## References 
