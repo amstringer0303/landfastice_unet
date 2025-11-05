@@ -116,7 +116,12 @@ The `openwaterthresholding.py` script thresholds the red band brightness to clas
 
 The final composite retains U-Net spatial accuracy and radiometric distinction from the binary rules.
 
----
+<p align="center">
+  <img src="Sentinel2_Wainwright_AK_20230423_combined_full_panel.png" width="75%">
+  <br>
+  <em>Figure 1. Combined classifications for Wainwright, AK (Sentinel-2, April 23 2023).</em>
+</p>
+ 
 
 ## Distance-to-Coast Computation
 
