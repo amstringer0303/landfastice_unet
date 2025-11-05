@@ -114,14 +114,20 @@ The `openwaterthresholding.py` script thresholds the red band brightness to clas
 - Landfast ice from U-Net (post-fixed)
 - Open water from brightness thresholding
 
+-  <p align="center">
+  <img src="Sentinel2_Arviat_NU_20240303_thin_thick_openwater_masked.png" width="75%">
+  <br>
+  <em>Figure 1. Open Water Classification Over Arviat, NU (Sentinel-2, March 03, 2024).</em>
+</p>
+
 The final composite retains U-Net spatial accuracy and radiometric distinction from the binary rules.
 
 <p align="center">
   <img src="Sentinel2_Wainwright_AK_20230423_combined_full_panel.png" width="75%">
   <br>
-  <em>Figure 1. Combined classifications for Wainwright, AK (Sentinel-2, April 23 2023).</em>
+  <em>Figure 2. Combined classifications for Wainwright, AK (Sentinel-2, April 23 2023).</em>
 </p>
- 
+
 
 ## Distance-to-Coast Computation
 
@@ -178,7 +184,6 @@ Goal: Quantify open-water fraction near the coast and ice edge.
 - Quantitative metrics on coastal ice stability and polynya persistence.
 
 ![Wainwright classifications](Sentinel_2_Wainwright_AK_20230423_combined_full_panel.png)
-
 
   ---
 ## References 
