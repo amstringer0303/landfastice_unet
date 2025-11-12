@@ -1,27 +1,25 @@
 # Arctic Coastal Ice Detection and Open-Water Dynamics (2019–2024)
 
 **Author:** Ana Stringer  
-**Course:** ENVIRON 514.01 – Geospatial Data Science (Fall 2025)  
+**Course:** ECS 851L – Geospatial Data Science (Fall 2025)  
 **Instructor:** Dr. Johnny Ryan  
 
 ---
 
 ## Summary
 
-This project develops a hybrid deep learning and rule-based system for classifying and tracking Arctic coastal ice using Sentinel-2 imagery (10 m RGB).  
-It combines a U-Net convolutional neural network (CNN) trained with RGB plus distance-to-coast (meters) inputs, followed by post-processing and brightness-based classification to refine the detection of landfast ice, drift ice, and open water.  
-
-The workflow enables temporal tracking of landfast-ice edge positioning and open-water fraction within coastal buffers (3 km, 5 km, 10 km) across key Arctic sites — **Wainwright**, **Utqiaġvik (Barrow)**, **Arviat**, and **Uelen** — between 2019 and 2024 during the spring months of March - June. 
+This project develops a hybrid deep learning and rule-based system for classifying and tracking Arctic coastal ice using Sentinel-2 imagery (10 m RGB). It combines a U-Net convolutional neural network (CNN) trained with RGB plus distance-to-coast (meters) inputs, followed by post-processing and brightness-based classification to refine the detection of landfast ice, drift ice, and open water. The workflow enables temporal tracking of landfast-ice edge positioning and open-water fraction within coastal buffers (3 km, 5 km, 10 km) across key Arctic sites — **Wainwright**, **Utqiaġvik (Barrow)**, **Arviat**, and **Uelen** — between 2019 and 2024 during the spring months of March - June. 
 
 ---
 
 ## Motivation
 
-Distinguishing landfast ice from drift ice purely by satellite optical reflectance is challenging: both may exhibit similar visible/NIR signatures (especially when snow‑covered or ponded), and classification often requires incorporating geospatial context (e.g., adjacency to coastline, motion‑derived anchoring) and ancillary features (e.g., distance to coast, connectivity). This similarity poses challenges for Arctic coastal monitoring, where small-scale changes in landfast ice and open water conditions can have strong implications for subsistence travel, ecosystem dynamics, and bowhead whale / marine hunting access.  
+Distinguishing landfast ice from drift ice purely by satellite optical reflectance is challenging: both may exhibit similar visible/NIR signatures (especially when snow‑covered or ponded), and classification often requires incorporating geospatial context (e.g., adjacency to coastline, motion‑derived anchoring) and ancillary features (e.g., distance to coast, connectivity). This similarity poses challenges for Arctic coastal monitoring, where small-scale changes in landfast ice and open water conditions can have important implications for subsistence travel, ecosystem dynamics, and bowhead whale / marine hunting access.  
 
-Recent work (Iqrah et al., 2024) has shown the effectiveness of U‑Net on Sentinel‑2 for ice/open‐water classification, which supports our use of a similar architecture and input design. Studies such as Buckley et al. (2023) illustrate the potential of Sentinel‑2 to track melting pond and open‐water evolution in Arctic ice regimes. However, limitations exist in the detection of landfast ice in Arctic coastal icy scenes. 
+Studies such as Buckley et al. (2023) illustrate the potential of Sentinel‑2 to track melting pond and open‐water evolution in Arctic ice regimes. Recent work (Iqrah et al., 2024) has shown the effectiveness of U‑Net on Sentinel‑2 for ice/open‐water classification, which supports our use of a similar architecture and input design.  However, limitations exist in the detection of landfast ice in Arctic coastal icy scenes. 
 
 To overcome limitation, this project integrates:
+
 - A U-Net model to capture spatial texture and context.
 - A distance-to-coast feature to supply geophysical grounding.
 - A binary-tree thresholding step to refine open-water detection.  
@@ -79,7 +77,7 @@ scipy
 | 6    | `stitch.py`                | Reconstructs full-scene mosaics from predicted tiles.                      |
 | 7    | `fix_driftmisclass.py`     | Applies coastal connectivity filtering to ensure landfast ice remains anchored (300 m buffer). |
 | 8    | `openwaterthresholding.py` | Brightness-based classification of open water, thin, and thick ice.        |
-| 9    | `binarytree.py`            | Merges landfast (U-Net) and open-water (brightness) maps into a composite classification. |
+| 9    | `binarytree.py`            | Merges landfast ice (U-Net) and open-water (brightness) maps into a composite classification. |
 
 ---
 
@@ -114,7 +112,7 @@ The `openwaterthresholding.py` script thresholds the red band brightness to clas
 - Landfast ice from U-Net (post-fixed)
 - Open water from brightness thresholding
 
--  <p align="center">
+<p align="center">
   <img src="Sentinel2_Arviat_NU_20240303_thin_thick_openwater_masked.png" width="75%">
   <br>
   <em>Figure 1. Open Water Classification Over Arviat, NU (Sentinel-2, March 03, 2024).</em>
